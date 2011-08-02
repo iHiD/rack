@@ -21,7 +21,7 @@ module Rack
       end
 
       def self.shutdown
-        @server.shutdown
+        @server.shutdown if @server.responds_to? :shutdown
         @server = nil
       end
 
